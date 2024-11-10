@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# display information about subdomains
+dig $1 | grep -A1 'ANSWER SECTION:' | awk '{print "The subdomain " $1 " is a " $4 " record and points to " $5}'
+dig $2 | grep -A1 'ANSWER SECTION:' | awk '{print "The subdomain " $1 " is a " $4 " record and points to " $5}'
